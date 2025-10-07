@@ -1,0 +1,224 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: rgb(64, 224, 208);
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(32, 58, 67) 50%, rgb(44, 83, 100) 100%);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  background: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grid\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\"><path d=\"M 10 0 L 0 0 0 10\" fill=\"none\" stroke=\"rgba(255,255,255,0.05)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grid)\"/></svg>");
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: rgb(64, 224, 208);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: rgb(64, 224, 208);
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* --- Desktop Nav styles --- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(4, 51, 66, 0.353);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgb(1, 99, 105);
+}
+
+.nav__inner {
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.nav__brand svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  opacity: 0.9;
+}
+.nav__item:hover {
+  opacity: 1;
+}
+.nav__item--active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav__button {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background-color: rgb(0, 128, 128);
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: rgba(36, 36, 36, 0.7);
+    border-bottom-color: rgb(1, 99, 105);
+  }
+  .nav__button {
+    background: #2563eb;
+  }
+}
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+.dropdown__chevron { opacity: 0.7; }
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  margin-top: 10px;
+  padding: 8px;
+  background: rgb(4, 51, 68);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: none;
+}
+.dropdown--open .dropdown__menu { display: block; }
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: white;
+}
+.dropdown__item:hover { background: rgba(0,0,0,0.04); }
+
+/* Mobile responsiveness */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+}
+.nav__bar { width: 22px; height: 2px; background: white; border-radius: 2px; }
+
+@media (max-width: 900px) {
+  .nav__toggle { display: inline-flex; }
+  .nav__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 64px;
+    background: inherit;
+    backdrop-filter: inherit;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 12px 24px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav--open .nav__links { display: flex; }
+  .dropdown__menu { position: relative; margin-top: 6px; box-shadow: none; }
+}
+
+.nav__header{
+  display: flex;
+}
