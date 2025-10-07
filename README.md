@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Spotter Navigation Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub language count](https://img.shields.io/github/languages/count/Nurudeen38/spotter-navigation-assessment)](https://github.com/Nurudeen38/spotter-navigation-assessment)
+[![GitHub top language](https://img.shields.io/github/languages/top/Nurudeen38/spotter-navigation-assessment)](https://github.com/Nurudeen38/spotter-navigation-assessment)
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repository contains the solution for the Spotter Navigation Assessment. The goal of this project is to demonstrate proficiency in building a robust and modern frontend application, primarily focusing on **navigation and component architecture** using the specified technologies.
 
-## React Compiler
+The application addresses the following core requirements:
+* **[Briefly describe the user interface, e.g., "Provide a responsive and intuitive user interface."]**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* **Component-Driven UI:** Modular and reusable components built with React and TypeScript.
+* **Type Safety:** Enhanced code quality and fewer runtime errors with TypeScript.
+* **Modern Tooling:** Fast development and build process powered by Vite.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Frontend Framework:** [React](https://react.dev/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Bundler/Tooling:** [Vite](https://vitejs.dev/)
+* **Styling:** [e.g CSS Modules, Styled Components, or Tailwind CSS]
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To run this project locally, you need to have the following installed:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* [Node.js](https://nodejs.org/en/download/) (LTS recommended)
+* [pnpm](https://pnpm.io/installation) or npm/yarn.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Nurudeen38/spotter-navigation-assessment.git](https://github.com/Nurudeen38/spotter-navigation-assessment.git)
+    cd spotter-navigation-assessment
+    ```
+
+2.  **Install dependencies** (using pnpm as per lock file):
+    ```bash
+    pnpm install
+    ```
+    *(If using npm, run `npm install`)*
+
+### Running Locally
+
+To start the development server:
+
+```bash
+pnpm run dev
