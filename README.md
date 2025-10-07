@@ -9,7 +9,7 @@
 This repository contains the solution for the Spotter Navigation Assessment. The goal of this project is to demonstrate proficiency in building a robust and modern frontend application, primarily focusing on **navigation and component architecture** using the specified technologies.
 
 The application addresses the following core requirements:
-* **[Briefly describe the user interface, e.g., "Provide a responsive and intuitive user interface."]**
+* **Provide a responsive and intuitive user navigation interface.**
 
 ## ✨ Features
 
