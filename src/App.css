@@ -53,3 +53,12 @@ main {
 h1, p {
   color: white;
 }
+
+
+.dropdown__chevron {
+  transition: transform 0.2s ease-in-out;
+}
+
+.dropdown__chevron--rotated {
+  transform: rotate(180deg);
+}

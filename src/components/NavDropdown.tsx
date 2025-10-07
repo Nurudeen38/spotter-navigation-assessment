@@ -47,7 +47,7 @@ export default function NavDropdown({ label, items }: { label: string; items: re
         onClick={() => setOpen((v) => !v)}
       >
         <span>{label}</span>
-        <span className="dropdown__chevron" aria-hidden>▾</span>
+        <span className={`dropdown__chevron${open ? ' dropdown__chevron--rotated' : ''}`} aria-hidden>▾</span>
       </button>
       <div className="dropdown__menu" role="menu">
         {items.map((item) => (
